@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux命令的习惯 | Note</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link rel="mask-icon" href="/logo.svg" color="#3eaf7c">
+    <meta name="description" content="个人笔记">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/mstile-150x150.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.abbbf5cf.css" as="style"><link rel="preload" href="/assets/js/app.d53cfcbd.js" as="script"><link rel="preload" href="/assets/js/3.e9c2a426.js" as="script"><link rel="preload" href="/assets/js/1.5890b972.js" as="script"><link rel="preload" href="/assets/js/158.e63401b3.js" as="script"><link rel="prefetch" href="/assets/js/10.f3138926.js"><link rel="prefetch" href="/assets/js/100.ea929bda.js"><link rel="prefetch" href="/assets/js/101.ab806611.js"><link rel="prefetch" href="/assets/js/102.e78457a0.js"><link rel="prefetch" href="/assets/js/103.70c02621.js"><link rel="prefetch" href="/assets/js/104.84054fff.js"><link rel="prefetch" href="/assets/js/105.9807ca75.js"><link rel="prefetch" href="/assets/js/106.2362bb04.js"><link rel="prefetch" href="/assets/js/107.e7144928.js"><link rel="prefetch" href="/assets/js/108.b665d5c8.js"><link rel="prefetch" href="/assets/js/109.4f9e182d.js"><link rel="prefetch" href="/assets/js/11.44aab4cb.js"><link rel="prefetch" href="/assets/js/110.64899f1e.js"><link rel="prefetch" href="/assets/js/111.91ef6881.js"><link rel="prefetch" href="/assets/js/112.ff287120.js"><link rel="prefetch" href="/assets/js/113.462c0a99.js"><link rel="prefetch" href="/assets/js/114.2caf684b.js"><link rel="prefetch" href="/assets/js/115.8327f63f.js"><link rel="prefetch" href="/assets/js/116.0aaba929.js"><link rel="prefetch" href="/assets/js/117.34162b1f.js"><link rel="prefetch" href="/assets/js/118.08336f18.js"><link rel="prefetch" href="/assets/js/119.2271ae1c.js"><link rel="prefetch" href="/assets/js/12.c6f7e422.js"><link rel="prefetch" href="/assets/js/120.a4d0fe47.js"><link rel="prefetch" href="/assets/js/121.f4d19f72.js"><link rel="prefetch" href="/assets/js/122.c5178eba.js"><link rel="prefetch" href="/assets/js/123.eda56460.js"><link rel="prefetch" href="/assets/js/124.538bdb32.js"><link rel="prefetch" href="/assets/js/125.3d2fc7c8.js"><link rel="prefetch" href="/assets/js/126.0ec91cbe.js"><link rel="prefetch" href="/assets/js/127.2123937b.js"><link rel="prefetch" href="/assets/js/128.c80cfb48.js"><link rel="prefetch" href="/assets/js/129.1cb113a4.js"><link rel="prefetch" href="/assets/js/13.025bf1a1.js"><link rel="prefetch" href="/assets/js/130.a8f9a0cb.js"><link rel="prefetch" href="/assets/js/131.4e06492d.js"><link rel="prefetch" href="/assets/js/132.8a14dced.js"><link rel="prefetch" href="/assets/js/133.9e0fe8a9.js"><link rel="prefetch" href="/assets/js/134.6bc3fe6d.js"><link rel="prefetch" href="/assets/js/135.965cabdd.js"><link rel="prefetch" href="/assets/js/136.6e74ad9a.js"><link rel="prefetch" href="/assets/js/137.12affd01.js"><link rel="prefetch" href="/assets/js/138.c8524824.js"><link rel="prefetch" href="/assets/js/139.9c1a108d.js"><link rel="prefetch" href="/assets/js/14.210a44a5.js"><link rel="prefetch" href="/assets/js/140.b12f5da9.js"><link rel="prefetch" href="/assets/js/141.56e8b64e.js"><link rel="prefetch" href="/assets/js/142.6bfaa8e1.js"><link rel="prefetch" href="/assets/js/143.4db7784c.js"><link rel="prefetch" href="/assets/js/144.efe9efd2.js"><link rel="prefetch" href="/assets/js/145.9d0bea1b.js"><link rel="prefetch" href="/assets/js/146.2dfcdf24.js"><link rel="prefetch" href="/assets/js/147.84d65a9f.js"><link rel="prefetch" href="/assets/js/148.78897d3b.js"><link rel="prefetch" href="/assets/js/149.e5bf30cc.js"><link rel="prefetch" href="/assets/js/15.1bb111a5.js"><link rel="prefetch" href="/assets/js/150.1e913f4b.js"><link rel="prefetch" href="/assets/js/151.9645f894.js"><link rel="prefetch" href="/assets/js/152.971c33c5.js"><link rel="prefetch" href="/assets/js/153.bf9c8de5.js"><link rel="prefetch" href="/assets/js/154.31f05245.js"><link rel="prefetch" href="/assets/js/155.3582a9ef.js"><link rel="prefetch" href="/assets/js/156.a2c40488.js"><link rel="prefetch" href="/assets/js/157.a7d3f47b.js"><link rel="prefetch" href="/assets/js/159.c4193f82.js"><link rel="prefetch" href="/assets/js/16.cb597ca8.js"><link rel="prefetch" href="/assets/js/160.0bb83f1d.js"><link rel="prefetch" href="/assets/js/161.d8ba8079.js"><link rel="prefetch" href="/assets/js/162.62c017fb.js"><link rel="prefetch" href="/assets/js/163.b61ea428.js"><link rel="prefetch" href="/assets/js/164.2002dbc5.js"><link rel="prefetch" href="/assets/js/165.9ab6006f.js"><link rel="prefetch" href="/assets/js/166.4da7b61f.js"><link rel="prefetch" href="/assets/js/167.317adaa2.js"><link rel="prefetch" href="/assets/js/168.7c1552be.js"><link rel="prefetch" href="/assets/js/169.02f9aaa0.js"><link rel="prefetch" href="/assets/js/17.a342fe64.js"><link rel="prefetch" href="/assets/js/170.08820b26.js"><link rel="prefetch" href="/assets/js/171.d5cf6907.js"><link rel="prefetch" href="/assets/js/172.5d83e6aa.js"><link rel="prefetch" href="/assets/js/173.6c3feb5c.js"><link rel="prefetch" href="/assets/js/174.582fdc21.js"><link rel="prefetch" href="/assets/js/175.04c12299.js"><link rel="prefetch" href="/assets/js/176.2c145433.js"><link rel="prefetch" href="/assets/js/177.ae44db4b.js"><link rel="prefetch" href="/assets/js/178.ba63d44c.js"><link rel="prefetch" href="/assets/js/179.9892eeb2.js"><link rel="prefetch" href="/assets/js/18.790e6a90.js"><link rel="prefetch" href="/assets/js/180.5946c605.js"><link rel="prefetch" href="/assets/js/181.f3fa7d00.js"><link rel="prefetch" href="/assets/js/182.b7bb7e9a.js"><link rel="prefetch" href="/assets/js/183.5379f77b.js"><link rel="prefetch" href="/assets/js/184.7d9bbed5.js"><link rel="prefetch" href="/assets/js/185.18b065e9.js"><link rel="prefetch" href="/assets/js/186.1801c719.js"><link rel="prefetch" href="/assets/js/187.7c2f784f.js"><link rel="prefetch" href="/assets/js/188.376b7e2a.js"><link rel="prefetch" href="/assets/js/189.e8449166.js"><link rel="prefetch" href="/assets/js/19.f4aeb3b9.js"><link rel="prefetch" href="/assets/js/190.47bd7022.js"><link rel="prefetch" href="/assets/js/191.6b9460da.js"><link rel="prefetch" href="/assets/js/192.50890278.js"><link rel="prefetch" href="/assets/js/193.31a90277.js"><link rel="prefetch" href="/assets/js/194.0658ce9e.js"><link rel="prefetch" href="/assets/js/195.dbd73408.js"><link rel="prefetch" href="/assets/js/196.f372fcba.js"><link rel="prefetch" href="/assets/js/197.fc934461.js"><link rel="prefetch" href="/assets/js/198.7d085a33.js"><link rel="prefetch" href="/assets/js/199.d96d6939.js"><link rel="prefetch" href="/assets/js/20.007f1275.js"><link rel="prefetch" href="/assets/js/200.200a478d.js"><link rel="prefetch" href="/assets/js/201.5b433ca2.js"><link rel="prefetch" href="/assets/js/202.e20bc954.js"><link rel="prefetch" href="/assets/js/203.b8ea0099.js"><link rel="prefetch" href="/assets/js/204.07ea57d2.js"><link rel="prefetch" href="/assets/js/205.723dec17.js"><link rel="prefetch" href="/assets/js/206.79a1af49.js"><link rel="prefetch" href="/assets/js/207.4dfd7f2a.js"><link rel="prefetch" href="/assets/js/208.50f19396.js"><link rel="prefetch" href="/assets/js/209.cfd8e3fc.js"><link rel="prefetch" href="/assets/js/21.91bb380c.js"><link rel="prefetch" href="/assets/js/210.347e2680.js"><link rel="prefetch" href="/assets/js/211.ab8f76db.js"><link rel="prefetch" href="/assets/js/212.027bd9a8.js"><link rel="prefetch" href="/assets/js/213.4c64af87.js"><link rel="prefetch" href="/assets/js/214.86d4649b.js"><link rel="prefetch" href="/assets/js/215.727103e1.js"><link rel="prefetch" href="/assets/js/216.22345f4d.js"><link rel="prefetch" href="/assets/js/217.50ce5979.js"><link rel="prefetch" href="/assets/js/218.a4c9ca86.js"><link rel="prefetch" href="/assets/js/219.12ac3f77.js"><link rel="prefetch" href="/assets/js/22.229171d3.js"><link rel="prefetch" href="/assets/js/220.8df2dfd6.js"><link rel="prefetch" href="/assets/js/221.3e0f7dc7.js"><link rel="prefetch" href="/assets/js/222.0addf2bd.js"><link rel="prefetch" href="/assets/js/223.bfc0114f.js"><link rel="prefetch" href="/assets/js/224.0a2f8b18.js"><link rel="prefetch" href="/assets/js/225.6e621b0f.js"><link rel="prefetch" href="/assets/js/226.5852e0a5.js"><link rel="prefetch" href="/assets/js/227.3b650142.js"><link rel="prefetch" href="/assets/js/228.378b171e.js"><link rel="prefetch" href="/assets/js/229.ad4a96be.js"><link rel="prefetch" href="/assets/js/23.561be2ec.js"><link rel="prefetch" href="/assets/js/230.38cee0f2.js"><link rel="prefetch" href="/assets/js/231.72abbaf0.js"><link rel="prefetch" href="/assets/js/232.24dd8f83.js"><link rel="prefetch" href="/assets/js/233.cfcade6f.js"><link rel="prefetch" href="/assets/js/234.ad09c597.js"><link rel="prefetch" href="/assets/js/235.3058529c.js"><link rel="prefetch" href="/assets/js/236.7a3b7ac3.js"><link rel="prefetch" href="/assets/js/237.83ef884d.js"><link rel="prefetch" href="/assets/js/238.4ddc0779.js"><link rel="prefetch" href="/assets/js/239.5bdf0474.js"><link rel="prefetch" href="/assets/js/24.b9aa3fe6.js"><link rel="prefetch" href="/assets/js/240.d3f19f9c.js"><link rel="prefetch" href="/assets/js/241.55b2d188.js"><link rel="prefetch" href="/assets/js/242.20aa1514.js"><link rel="prefetch" href="/assets/js/243.f8e5c928.js"><link rel="prefetch" href="/assets/js/244.0cdf959f.js"><link rel="prefetch" href="/assets/js/245.28050777.js"><link rel="prefetch" href="/assets/js/246.a91526ba.js"><link rel="prefetch" href="/assets/js/247.9e6d7ef9.js"><link rel="prefetch" href="/assets/js/248.df64c82f.js"><link rel="prefetch" href="/assets/js/249.1023c542.js"><link rel="prefetch" href="/assets/js/25.80570efe.js"><link rel="prefetch" href="/assets/js/250.98d3a6b4.js"><link rel="prefetch" href="/assets/js/251.0aa1eed4.js"><link rel="prefetch" href="/assets/js/252.f25de9ab.js"><link rel="prefetch" href="/assets/js/253.e320963f.js"><link rel="prefetch" href="/assets/js/254.d5aac1f3.js"><link rel="prefetch" href="/assets/js/255.98a390c2.js"><link rel="prefetch" href="/assets/js/256.60c4f7ca.js"><link rel="prefetch" href="/assets/js/257.8bc69d61.js"><link rel="prefetch" href="/assets/js/26.46dad0d9.js"><link rel="prefetch" href="/assets/js/27.dd7a51ce.js"><link rel="prefetch" href="/assets/js/28.645f28f7.js"><link rel="prefetch" href="/assets/js/29.8d80ec77.js"><link rel="prefetch" href="/assets/js/30.55e0d84d.js"><link rel="prefetch" href="/assets/js/31.b13c1d3c.js"><link rel="prefetch" href="/assets/js/32.d2b2ffe8.js"><link rel="prefetch" href="/assets/js/33.68e5d834.js"><link rel="prefetch" href="/assets/js/34.8de0e54c.js"><link rel="prefetch" href="/assets/js/35.a24c1436.js"><link rel="prefetch" href="/assets/js/36.137b9bbd.js"><link rel="prefetch" href="/assets/js/37.e3cf5b22.js"><link rel="prefetch" href="/assets/js/38.0b8fd6d2.js"><link rel="prefetch" href="/assets/js/39.dbabdb9f.js"><link rel="prefetch" href="/assets/js/4.741bed19.js"><link rel="prefetch" href="/assets/js/40.7306d4bd.js"><link rel="prefetch" href="/assets/js/41.623f831a.js"><link rel="prefetch" href="/assets/js/42.3cdbbebf.js"><link rel="prefetch" href="/assets/js/43.a08e8d7f.js"><link rel="prefetch" href="/assets/js/44.d88dee61.js"><link rel="prefetch" href="/assets/js/45.cc25541a.js"><link rel="prefetch" href="/assets/js/46.ff95da80.js"><link rel="prefetch" href="/assets/js/47.9f3e2026.js"><link rel="prefetch" href="/assets/js/48.116bb9a0.js"><link rel="prefetch" href="/assets/js/49.cde38b36.js"><link rel="prefetch" href="/assets/js/5.cc76fe96.js"><link rel="prefetch" href="/assets/js/50.33f5c9eb.js"><link rel="prefetch" href="/assets/js/51.d03e7810.js"><link rel="prefetch" href="/assets/js/52.957b3572.js"><link rel="prefetch" href="/assets/js/53.7f94ed10.js"><link rel="prefetch" href="/assets/js/54.009cd28c.js"><link rel="prefetch" href="/assets/js/55.a334d21f.js"><link rel="prefetch" href="/assets/js/56.88638f24.js"><link rel="prefetch" href="/assets/js/57.f6bf42f0.js"><link rel="prefetch" href="/assets/js/58.586a41a6.js"><link rel="prefetch" href="/assets/js/59.c4361e41.js"><link rel="prefetch" href="/assets/js/6.4145fc7e.js"><link rel="prefetch" href="/assets/js/60.1515ce07.js"><link rel="prefetch" href="/assets/js/61.9d07b9c2.js"><link rel="prefetch" href="/assets/js/62.c9e7083a.js"><link rel="prefetch" href="/assets/js/63.caca8c92.js"><link rel="prefetch" href="/assets/js/64.a9c54775.js"><link rel="prefetch" href="/assets/js/65.0f368e0b.js"><link rel="prefetch" href="/assets/js/66.b03f5150.js"><link rel="prefetch" href="/assets/js/67.44d4060f.js"><link rel="prefetch" href="/assets/js/68.95a1bb05.js"><link rel="prefetch" href="/assets/js/69.2bd4b8c2.js"><link rel="prefetch" href="/assets/js/7.8d98d5a8.js"><link rel="prefetch" href="/assets/js/70.adfd3c4d.js"><link rel="prefetch" href="/assets/js/71.64a90aae.js"><link rel="prefetch" href="/assets/js/72.af74f99f.js"><link rel="prefetch" href="/assets/js/73.f2f38323.js"><link rel="prefetch" href="/assets/js/74.e6d6ef3c.js"><link rel="prefetch" href="/assets/js/75.fd4596ff.js"><link rel="prefetch" href="/assets/js/76.2c7d5729.js"><link rel="prefetch" href="/assets/js/77.17a040c7.js"><link rel="prefetch" href="/assets/js/78.a6a61439.js"><link rel="prefetch" href="/assets/js/79.36b7ef29.js"><link rel="prefetch" href="/assets/js/8.22c83613.js"><link rel="prefetch" href="/assets/js/80.70e317fa.js"><link rel="prefetch" href="/assets/js/81.28f72c0f.js"><link rel="prefetch" href="/assets/js/82.5a10e47c.js"><link rel="prefetch" href="/assets/js/83.8c29eca8.js"><link rel="prefetch" href="/assets/js/84.b0bab681.js"><link rel="prefetch" href="/assets/js/85.51abb12e.js"><link rel="prefetch" href="/assets/js/86.789bce98.js"><link rel="prefetch" href="/assets/js/87.a7d84cac.js"><link rel="prefetch" href="/assets/js/88.688752c8.js"><link rel="prefetch" href="/assets/js/89.bf806d6c.js"><link rel="prefetch" href="/assets/js/9.8cf90aa1.js"><link rel="prefetch" href="/assets/js/90.dd66bd7f.js"><link rel="prefetch" href="/assets/js/91.21c2c103.js"><link rel="prefetch" href="/assets/js/92.4e8f4c13.js"><link rel="prefetch" href="/assets/js/93.2096de55.js"><link rel="prefetch" href="/assets/js/94.dca7e609.js"><link rel="prefetch" href="/assets/js/95.be4d7b20.js"><link rel="prefetch" href="/assets/js/96.5ac96bfb.js"><link rel="prefetch" href="/assets/js/97.ed87d5a5.js"><link rel="prefetch" href="/assets/js/98.9520fc92.js"><link rel="prefetch" href="/assets/js/99.9169a6de.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.abbbf5cf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-584a622c><div data-v-584a622c><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-584a622c data-v-584a622c><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-73c95a87 data-v-584a622c data-v-584a622c><h3 class="title" style="display:none;" data-v-73c95a87 data-v-73c95a87>Note</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-73c95a87 data-v-73c95a87><input type="password" value="" data-v-73c95a87> <span data-v-73c95a87>Konck! Knock!</span> <button data-v-73c95a87>OK</button></label> <div class="footer" style="display:none;" data-v-73c95a87 data-v-73c95a87><span data-v-73c95a87><i class="iconfont reco-theme" data-v-73c95a87></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-73c95a87>vuePress-theme-reco</a></span> <span data-v-73c95a87><i class="iconfont reco-copyright" data-v-73c95a87></i> <a data-v-73c95a87><span data-v-73c95a87>oorzc</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-584a622c><header class="navbar" data-v-584a622c><div title="导航" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Note</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" readonly="readonly" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/javascript/base/js数组操作.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端
+</a></div><div class="nav-item"><a href="/mysql/操作命令.html" class="nav-link"><i class="iconfont undefined"></i>
+  mysql
+</a></div><div class="nav-item"><a href="/mac/mac.html" class="nav-link"><i class="iconfont undefined"></i>
+  Mac
+</a></div><div class="nav-item"><a href="/linux/note/catalog.html" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-584a622c></div> <aside class="sidebar" data-v-584a622c><div class="personal-info-wrapper" data-v-7e653f02><img src="/icon.png" alt="author-avatar" class="personal-img" data-v-7e653f02> <h3 class="name" data-v-7e653f02>
+    oorzc
+  </h3> <div class="num" data-v-7e653f02><div data-v-7e653f02><h3 data-v-7e653f02>1</h3> <h6 data-v-7e653f02>文章</h6></div> <div data-v-7e653f02><h3 data-v-7e653f02>1</h3> <h6 data-v-7e653f02>标签</h6></div></div> <hr data-v-7e653f02></div> <nav class="nav-links"><div class="nav-item"><a href="/javascript/base/js数组操作.html" class="nav-link"><i class="iconfont undefined"></i>
+  前端
+</a></div><div class="nav-item"><a href="/mysql/操作命令.html" class="nav-link"><i class="iconfont undefined"></i>
+  mysql
+</a></div><div class="nav-item"><a href="/mac/mac.html" class="nav-link"><i class="iconfont undefined"></i>
+  Mac
+</a></div><div class="nav-item"><a href="/linux/note/catalog.html" class="nav-link"><i class="iconfont undefined"></i>
+  Linux
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>shell命令</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/linux/note/catalog.html" class="sidebar-link">Linux-根目录介绍</a></li><li><a href="/linux/note/system.html" class="sidebar-link">系统管理命令</a></li><li><a href="/linux/note/command.html" aria-current="page" class="active sidebar-link">Linux命令的习惯</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/linux/note/command.html#查看目录下有什么文件信息" class="sidebar-link">查看目录下有什么文件信息</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/linux/note/command.html#显示文件和目录树" class="sidebar-link">显示文件和目录树</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#目录切换" class="sidebar-link">目录切换</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#查看当前操作位置" class="sidebar-link">查看当前操作位置</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#查看操作者信息-是谁在操作系统" class="sidebar-link">查看操作者信息(是谁在操作系统)</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#不同用户间的切换" class="sidebar-link">不同用户间的切换</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#查看指令对应的可以执行程序文件位置" class="sidebar-link">查看指令对应的可以执行程序文件位置</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#目录操作" class="sidebar-link">目录操作</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#文件操作" class="sidebar-link">文件操作</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#别名" class="sidebar-link">别名</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#find" class="sidebar-link">find</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#查看命令历史" class="sidebar-link">查看命令历史</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#管道" class="sidebar-link">管道</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#linux中的正则" class="sidebar-link">linux中的正则</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#权限设置" class="sidebar-link">权限设置</a></li><li class="sidebar-sub-header"><a href="/linux/note/command.html#开关机指令" class="sidebar-link">开关机指令</a></li></ul></li></ul></li><li><a href="/linux/note/command_vi.html" class="sidebar-link">Linux常用指令(vi编辑器)</a></li><li><a href="/linux/note/process.html" class="sidebar-link">进程管理</a></li><li><a href="/linux/note/rsync.html" class="sidebar-link">rsync介绍</a></li><li><a href="/linux/note/soft.html" class="sidebar-link">linux软件管理</a></li><li><a href="/linux/note/other.html" class="sidebar-link">其他命令</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>环境搭建</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>常用安装命令</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-73c95a87 data-v-584a622c><h3 class="title" style="display:none;" data-v-73c95a87 data-v-73c95a87></h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-73c95a87 data-v-73c95a87><input type="password" value="" data-v-73c95a87> <span data-v-73c95a87>Konck! Knock!</span> <button data-v-73c95a87>OK</button></label> <div class="footer" style="display:none;" data-v-73c95a87 data-v-73c95a87><span data-v-73c95a87><i class="iconfont reco-theme" data-v-73c95a87></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-73c95a87>vuePress-theme-reco</a></span> <span data-v-73c95a87><i class="iconfont reco-copyright" data-v-73c95a87></i> <a data-v-73c95a87><span data-v-73c95a87>oorzc</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-584a622c><main class="page"><!----> <div class="page-title" style="display:none;"><h1>Linux命令的习惯</h1> <hr> <div data-v-7b2e794a><i class="iconfont reco-account" data-v-7b2e794a><span data-v-7b2e794a>oorzc</span></i> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="linux命令的习惯"><a href="#linux命令的习惯" class="header-anchor">#</a> Linux命令的习惯</h1> <div class="language- extra-class"><pre><code>- 命令及参数区分大小写
+- 程序可否执行与扩展名无关
+- 使用tab键来补全命令
+
+$command  [-options]    parameter1   parameter2  …
+
+	指令          选项             参数1          参数2
+
+说明：
+0. 一行指令中第一个输入的绝对是‘指令(command)’或‘可执行文件’
+1. command 为指令的名称，例如变换路径的指令为 cd 等等；
+2. 中刮号[]并不存在于实际的指令中，而加入参数设定时，通常为 - 号，例如   -h； 有时候完整参数名称会输入 -- 符号，例如 --help；
+3. parameter1 parameter2.. 为依附在 option 后面的参数， 或者是 command        的参数；
+4. command, -options, parameter1.. 这几个中间以空格来区分，不论空几格 shell 都视为一格；
+5. 按下 [Enter] 按键后，该指令就立即执行。
+6. 指令太长的时候，可以使用 \ 符号来跳脱 [Enter] 符号， 使指令连续到下一行。注意！ \ 后就立刻接特殊字符。
+7. 在 Linux 系统中，英文大小写字母是不一样的。举例来说， cd 与 CD 并不同。
+</code></pre></div><h2 id="查看目录下有什么文件信息"><a href="#查看目录下有什么文件信息" class="header-anchor">#</a> 查看目录下有什么文件信息</h2> <div class="language- extra-class"><pre><code>&gt; ls  //list查看当前目录下有什么文件
+&gt; ls  -l      //list  -list 通过详细内容形式查看目录下的文件内容
+
+用颜色代表不同文件
+白色：普通文件
+红色：压缩文件
+蓝色：目录文件
+浅蓝色：链接文件
+黄色：设备文件（/dev）
+绿色：可执行文件（/bin、/sbin）
+粉红色：图片文件
+
+&gt; ls  目录    //查看指定目录下文件名字信息
+&gt; ls  -l 目录  //以详细列表形式查看指定目录下文件名字信息
+&gt; ls  -a      //list  all 查看全部文件，包括隐藏文件
+&gt; ls  -al     //list  list all 以详细列表形式查看全部文件，包括隐藏文件
+&gt; win dir 查看指定目录下文件名字信息
+</code></pre></div><h3 id="显示文件和目录树"><a href="#显示文件和目录树" class="header-anchor">#</a> 显示文件和目录树</h3> <div class="language- extra-class"><pre><code>yum -y install tree
+&gt; tree
+用法：  tree    [参数]   {文件}
+参数：  -a   不隐藏任何以.字符开始的条目
+-d   只显示目录不显示文件
+-f    每个文件都显示路径
+-t   根据最后修改时间排序
+-L n 只显示n层目录 （n为数字）
+</code></pre></div><h3 id="目录切换"><a href="#目录切换" class="header-anchor">#</a> 目录切换</h3> <div class="language- extra-class"><pre><code>&gt; cd   目录名字
+&gt; cd   ..       //向上级目录切换
+&gt; cd  ~         //快速切换回自己的家目录
+</code></pre></div><h3 id="查看当前操作位置"><a href="#查看当前操作位置" class="header-anchor">#</a> 查看当前操作位置</h3> <div class="language- extra-class"><pre><code>&gt; pwd
+</code></pre></div><h3 id="查看操作者信息-是谁在操作系统"><a href="#查看操作者信息-是谁在操作系统" class="header-anchor">#</a> 查看操作者信息(是谁在操作系统)</h3> <div class="language- extra-class"><pre><code>&gt; whoami
+</code></pre></div><h3 id="不同用户间的切换"><a href="#不同用户间的切换" class="header-anchor">#</a> 不同用户间的切换</h3> <div class="language- extra-class"><pre><code>&gt; su -              //切换为root用户
+&gt; su -  root        //效果同上
+&gt; su  普通用户名称  //向普通用户切换
+exit        //当前用户退回到之前用户
+
+su多次使用，用户会“累加”，建议“su” 和 “exit”匹配使用
+jinnan---&gt;root---&gt;jinnan---&gt;root---&gt;jinnan
+</code></pre></div><h3 id="查看指令对应的可以执行程序文件位置"><a href="#查看指令对应的可以执行程序文件位置" class="header-anchor">#</a> 查看指令对应的可以执行程序文件位置</h3> <div class="language- extra-class"><pre><code>&gt; which  指令
+</code></pre></div><h3 id="目录操作"><a href="#目录操作" class="header-anchor">#</a> 目录操作</h3> <div class="language- extra-class"><pre><code>1)创建目录  make  directory
+&gt; mkdir  newdir
+&gt; mkdir -p newdir/newdir/newdir     //递归方式创建多级目录
+newdir新目录多于1个层次(2/3/4等)就设置-p参数，如果就一个新的目录则无需-p参数
+&gt; mkdir  dir/newdir
+&gt; mkdir  dir/dir/newdir
+&gt; mkdir -p dir/newdir/newdir
+
+2) 移动(改名字)目录  move
+	(目录/文件 都可以操作)
+&gt; mv  dir1  dir2                //dir1移动到dir2目录下,并给改名字为&quot;原名&quot;
+&gt; mv  dir1  dir2/newdir         //dir1移动到dir2目录下,并给改名字为newdir
+&gt; mv  dir1/dir2  dir3/dir4      //dir2移动到dir4目录下,并给改名字为&quot;原名&quot;
+&gt; mv  dir1/dir2  dir3/dir4/newdir  //dir2移动到dir4目录下,并给改名字为 newdir
+&gt; mv  dir1/dir2  ./             //dir2移动到 当前 目录下,并给改名字为&quot;原名&quot;
+&gt; mv  dir1/dir2  ./newdir           //dir2移动到 当前 目录下,并给改名字为newdir
+
+
+3) 复制(改名字)目录  copy
+	(目录/文件 都可以操作)
+//① 复制普通文件
+&gt; cp  file1  dir1             //file1被复制到dir1目录下一份，并给改名字为“原名”
+&gt; cp  file1  dir1/newfile     //file1被复制到dir1目录下一份，并给改名字为newfile
+
+//② 复制目录 -r参数要求
+//recursive递归方式拷贝目录
+&gt; cp -r dir1  dir2            //dir1被复制到dir2目录下一份，并给改名字为“原名”
+&gt; cp -r dir1  dir2/newdir     //dir1被复制到dir2目录下一份，并给改名字为newdir
+&gt; cp -r dir1/dir2/dir3   dir4/dir5  //dir3被复制到dir5目录下一份，并给改名字为&quot;原名&quot;
+
+用法： cp  [参数]   {原文件…}  {目标文件}
+	参数：  -r  递归执行  （可复制目录树）
+
+4) 删除 remove
+&gt; rm  filename      //普通文件删除
+&gt; rm -r dir         //删除目录[无视层次]需要-r参数
+&gt; rm -rf  文件      //recursive force 递归强制删除文件 force 避免删除隐藏文件的提示
+&gt; rm -rf  /         //递归强制方式删除系统里边的全部内容
+</code></pre></div><h3 id="文件操作"><a href="#文件操作" class="header-anchor">#</a> 文件操作</h3> <div class="language- extra-class"><pre><code>1) 查看文件内容
+	&gt;	file   [option] filename // file显示文件类型
+&gt; cat  filename     //在终端显示文件全部内容
+&gt; more filename     //通过&quot;敲回车&quot;方式从第一行逐行查看文件内容
+					//不支持回看
+					//q键 退出查看
+&gt; less filename     //&quot;上下左右&quot;键方式查看文件各个部分内容
+					//支持回看，q键 退出
+&gt; head  -n  filename  //查看文件“前n行”内容
+&gt; tail  -n  filename  //查看文件“末尾n行”内容
+&gt; wc  filename      //计算文件行数
+
+2) 创建文件
+&gt; touch  filename
+&gt; touch  dir/filename
+参数：   -d    更改时间戳为定义值   （后面加年月日，格式：20101212）
+
+3) 追加内容(文件不存在会“自动”创建)
+&gt; echo  内容 &gt; filename    //给文件“覆盖写”方式追加内容
+&gt; echo  内容 &gt;&gt; filename   //给文件纯追加内容
+</code></pre></div><h3 id="别名"><a href="#别名" class="header-anchor">#</a> 别名</h3> <div class="language- extra-class"><pre><code>alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ls='ls --color=auto'
+alias ll='ls -lh --color=auto'
+alias l='ls --color=auto'
+alias grep='grep --color=auto'
+debian系统的时候要在/etc/profile里面进行设置
+</code></pre></div><h3 id="find"><a href="#find" class="header-anchor">#</a> find</h3> <div class="language- extra-class"><pre><code>find  现值查找目录  选项  选项值  选项 选项值....
+[root@www ~]# find [PATH] [option] [action]
+选项与参数：
+
+1. 不时间有关的选项：共有 -atime, -ctime 与 -mtime ，以 -mtime 说明
+	-mtime  n ：n 为数字，意义为在 n 天之前的『一天之内』被更改过内容的文件
+	-mtime +n ：列出在 n 天之前(不含 n 天本身)被改动过内容的文件；
+	-mtime -n ：列出在 n 天之内(含n 天本身)被更改过内容的文件。
+	-newer file ：file 为一个存在参照物，列出比 file 还要新的文件
+
+![](http://qiniu.sponges.cn/201807081751_760.png?imageView2/0/w/880/h/680)
+
+[root@www ~]# find / -mtime 0
+# 那个 0 是重点！0 代表目前的时间，所以，从现在开始到 24 小时前，有改动过内容的文件都会被列出来
+find / -mtime 3  #3天内改动过的文件
+find / -name file –exec ls –l {} \;
+
+
+文件的 Access time，atime 是在读取文件或者执行文件时更改的。
+文件的 Modified time，mtime 是在写入文件时随文件内容的更改而更改的。
+文件的 Create time，ctime 是在写入文件、更改所有者、权限或链接设置时随 Inode 的内容更改而更改的。
+ls -lc filename 列出文件的 ctime
+ls -lu filename 列出文件的 atime
+ls -l filename 列出文件的 mtime
+
+find  现值查找目录  选项  选项值  选项 选项值....
+具体选项：
+① name 根据文件名字查找指定的文件
+find  目录  -name  完整文件名称
+&gt; find  /  -name  passwd[完整名称]    //&quot;递归遍历&quot;系统全部目录查找名字等于passwd的文件
+&gt; find  /etc  -name passwd[完整名称]   //递归遍历/etc及内部所有目录查找  名字等于passwd的文件
+
+&gt;find  目录 -name  &quot;an*&quot;[部分名称]     //模糊查找文件名字以an开始的
+
+② 对查找的目录层次进行限制
+-maxdepth  限制查找的最&quot;深&quot;层次
+-mindepth  限制查找的最&quot;浅&quot;层次
+&gt; find / -name passwd -mindepth 3 -maxdepth 4   //在3到4个层次的目录里边定位passwd文件
+
+③ 根据文件大小进行查找
+size   单位
+&gt; find ./  -size  50c      //在当前目录下查找大小[等于]50个字节的文件
+单位：
+	数量         单位      实际大小
+	100 -------&gt; 512字节：【100*512字节】
+	50c -------&gt; 字节 ：   【50字节】
+	50k -------&gt; 千字节： 【50*1024字节】
+	50M -------&gt; 兆字节    【50*1024*1024字节】
+&gt; find  ./  -size  +50c    //在当前目录下查找大小[大于]50个字节的文件
+&gt; find  ./  -size  -50c    //在当前目录下查找大小[小于]50个字节的文件
+</code></pre></div><h3 id="查看命令历史"><a href="#查看命令历史" class="header-anchor">#</a> 查看命令历史</h3> <div class="language- extra-class"><pre><code>history
+history -c //清空历史命令
+</code></pre></div><h3 id="管道"><a href="#管道" class="header-anchor">#</a> 管道</h3> <div class="language- extra-class"><pre><code>grep
+-c 只输出匹配行的计数。
+-i 不区分大小写（只适用于单字符）。
+-h 查询多文件时不显示文件名。
+-l 查询多文件时只输出包含匹配字符的文件名。
+-n 显示匹配行及行号。
+-s 不显示不存在或无匹配文本的错误信息。
+-v 显示不包含匹配文本的所有行。
+
+sort -r 反向排序
+cut –d ‘分割符’ –f 取第几段
+uniq –c 计数
+wc –l 统计多少行
+
+ps
+1）ps a 显示现行终端机下的所有程序，包括其他用户的程序。
+2）ps -A   显示所有程序。
+3）ps c    列出程序时，显示每个程序真正的指令名称，而不包含路径，参数或常驻服务的标示。
+4）ps -e  此参数的效果和指定&quot;A&quot;参数相同。
+5）ps e   列出程序时，显示每个程序所使用的环境变量。
+6）ps f    用ASCII字符显示树状结构，表达程序间的相互关系。
+7）ps -H    显示树状结构，表示程序间的相互关系。
+8）ps -N   显示所有的程序，除了执行ps指令终端机下的程序之外。
+9）ps s     采用程序信号的格式显示程序状况。
+10）ps S     列出程序时，包括已中断的子程序资料。
+11）ps -t &lt;终端机编号&gt; 　指定终端机编号，并列出属于该终端机的程序的状况。
+12）ps u 　 以用户为主的格式来显示程序状况。
+13）ps x 　 显示所有程序，不以终端机来区分。
+14）ps -l     較長,較詳細的顯示該PID的信息
+
+ps aux | grep -i www | sort -r
+![](http://qiniu.sponges.cn/201807081809_134.png?imageView2/0/w/880/h/680)
+</code></pre></div><h3 id="linux中的正则"><a href="#linux中的正则" class="header-anchor">#</a> linux中的正则</h3> <div class="language- extra-class"><pre><code>&amp;&amp;且
+||或
+几个概念：
+1.基本正则表达式   扩展的正则表达式  （由普通字符+元字符组成）
+2.通配                                            （由普通字符+元字符组成）
+3.元字符
+注意：正则表达式中元字符的意义和通配中元字符的意义有区别的
+
+bash shell本身不支持正则表达式，使用正则表达式的是shell的一些命令和工具，如grep,sed,awk等等
+但是bash可以使用正则表达式中的一些元字符实现通配的功能，此时的这些元字符叫通配符。
+此时通配中元字符的意义跟正则表达式中元字符的意义就不一样了。
+
+通配是指：将一个包含通配符的非具体的文件名扩展为计算机，服务器，网络上的一批具体的文件名的过程。
+
+基本正则表达式中元字符的意义如下：
+1.   *     匹配*前面的那一个字符的0次或多次
+如hel*o       heo  helo  hello  helllo  ......
+
+2.   .     匹配任意一个字符（只匹配一个，可以是空格）
+如ab.         abc  abd   ab3   ab   ......
+
+3.   ^     匹配行首，行首的字符序列必须是^后的字符序列
+如^suda       sudahuhuhuuuuuhuuh      sudaokokokokokoko   ......
+
+4.   &amp;     匹配行尾，行尾的字符序列必须是$前的字符序列
+如suda$       jijijijijiiijijsuda     lkokokokokjijhuhsuda   ......
+特殊的  ^$      匹配一个空行
+       ^.$     匹配只有一个字符的空行
+
+5.   []    匹配字符集合中的任意一个字符（只匹配一个）
+如[1234]  [1-4]     匹配1，2，3，4的任意一个字符
+注意：^放在[]里面时，不再表示匹配行首，而是取反的意思
+[^1234]  [^1-4]       匹配不是1，2，3，4的任意一个字符
+[a-z][A-Z]*  匹配任意一个英文单词 
+
+6.   \     用于转义元字符，使之成为普通字符
+如\*       此时*表示一个普通字符
+
+7.   \&lt;\&gt;     用于精确匹配
+如\&lt;the&gt;\      表示精确匹配the这个单词，而不是them  then等等
+
+8.\{\}系列符号
+\{n\}       匹配前面字符的n次
+\{n,\}      匹配前面字符的至少n次
+\{n,m\}     匹配前面字符的n-m次，至少n次，至多m次
+
+如JO\{3\}B    匹配JOOOB
+如JO\{3,\}B   匹配JOOOB  JOOOOB   ......
+如JO\{3,6\}B  匹配JOOOB  JOOOOB   JOOOOOB   JOOOOOOB  
+
+扩展的正则表达式中元字符的意义如下：
+1.    ？    匹配前面的那一个字符的0次或1次
+如JO?B      匹配   JB     JOB    JOOB
+
+2.    +     匹配前面的那一个字符的1次或多次
+如JO+B      匹配   JOOB   JOOOB   ......
+
+3.    |与（）通常结合使用，表示一组可选的字符集合
+如re(a|o|e)d     匹配read  reod  reed
+等同于re[aoe]d       
+
+通配中的元字符的意义如下：
+1.     *       表示任意多的任意字符
+2.     ?       表示一个任意字符
+3.     ^       表示取反
+4.     []      同正则表达式的用法
+5.     {}      表示一组表达式的集合   {}中表达式是或的关系
+如ls -l  {*.cpp , [1234]*.c}            列出满足表达式*.cpp或者[1234]*.c的文件。
+</code></pre></div><h3 id="权限设置"><a href="#权限设置" class="header-anchor">#</a> 权限设置</h3> <div class="language- extra-class"><pre><code>1) &quot;字母相对方式&quot;设置权限
+权限： r读 w写 x执行
+用户： u主人  g同组  o其他组
+chmod  u+/-rwx, g+/-rwx, o+/-rwx  文件
+	不同用户通过&quot;,逗号&quot;分隔
+	在同一个用户里边，+/-只能用“一个”
+	&quot;rwx&quot;在同一个用户里边可以设置一个或多个
+	&quot;ugo&quot; 每次权限操作可以设置一个或多个用户
+
+&gt;chmod u+rw  filename        //主人增加读、写
+&gt;chmod g-rx  filename        //同组删除读、执行
+&gt;chmod u-w,g+x filename      //主人删除写，同组增加执行
+&gt;chmod o+w,o-x  filename     //其他组用户“增加写、删除执行”
+
+2) &quot;数字绝对方式&quot; 设置权限
+读:4    写:2   执行:1
+权限类型：
+0:  没有权限
+1:  执行
+2:  写
+3:  写、执行
+4:  读
+5:  读、执行
+6:  读、写
+7： 读、写、执行
+
+chmod  ABC  filename   //ABC分别代表主人、同组、其他组用户权限
+&gt;chmod 764  filename   //主人读、写、执行，  同组读、写，    其他读
+&gt;chmod 777  filename   //满贯权限
+&gt;chmod 000  filename   //所有用户没有任何权限
+
+字母和数字方式取舍：
+权限修改的比较&quot;少&quot;，就使用字母方式
+权限修改的比较&quot;多&quot;，就使用数字方式
+</code></pre></div><h3 id="开关机指令"><a href="#开关机指令" class="header-anchor">#</a> 开关机指令</h3> <div class="language- extra-class"><pre><code>&gt;# reboot    //重启
+&gt;# poweroff  //关机</code></pre></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2020-08-24, 17:10:00</span></div></footer> <!----> <!----></main> <!----> <div class="comments-wrapper" data-v-584a622c><!----></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div data-v-48108b4c><div class="DetailsOpenFlag" style="right:1rem;bottom:9rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;font-size:14px;font-weight:500;display:none;" data-v-48108b4c>
+ 展开 
+
+</div></div></div></div>
+    <script src="/assets/js/app.d53cfcbd.js" defer></script><script src="/assets/js/3.e9c2a426.js" defer></script><script src="/assets/js/1.5890b972.js" defer></script><script src="/assets/js/158.e63401b3.js" defer></script>
+  </body>
+</html>
