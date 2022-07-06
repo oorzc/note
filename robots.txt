@@ -1,0 +1,4 @@
+# Algolia-Crawler-Verif: 45796C53E2ACA326
+User-agent:
+Allow:
+Sitemap:https://www.algolia.com/sitemap.xml
